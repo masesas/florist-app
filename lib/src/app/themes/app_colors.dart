@@ -29,9 +29,11 @@ class AppColors {
   static const colorHintText = colorUnHighlightText;
   static const colorBoxBorder = Color(0xFFEAEAEA);
   static const colorBackgroundGrey = Color(0xffB5B5B5);
-  static Color disabledTextField = Colors.grey.shade400;
+  static Color disabledTextField = Colors.grey.shade300;
   static Color bgColorGrey = Colors.grey.shade300;
-  static Color buttonColorReject = Colors.red.shade800;
+  static Color btnColor2nd = Colors.red.shade800;
+  static Color btnDisabled = colorUnHighlightText;
+  static const colorBox = Color(0xFFFFFFFF);
 
   ///App custom color
   static const bgApp = Color(0xffE37C30);

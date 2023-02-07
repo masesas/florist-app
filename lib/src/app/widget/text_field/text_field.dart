@@ -1,10 +1,16 @@
-import 'package:florist_app/gen/app_localizations.dart';
 import 'package:florist_app/src/app/themes/themes.dart';
+import 'package:florist_app/src/app/widget/widgets.dart';
+import 'package:florist_app/src/core/extensions/context_ext.dart';
+import 'package:florist_app/src/core/global/domain/entities/input_option_entity.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
-part 'custom_reactive_text_field.dart';
+part 'input_option_no_title.dart';
+part 'reactive_input_option.dart';
+part 'reactive_input_text.dart';
+part 'text_field_no_input.dart';
 part 'text_field_no_title.dart';
 
 OutlineInputBorder outlineInputPrimary = OutlineInputBorder(
@@ -27,14 +33,16 @@ InputDecoration inputDecoration(
       isDense: true,
       errorBorder: OutlineInputBorder(
         borderSide: const BorderSide(color: Colors.red),
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(5),
       ),
-      focusedBorder: outlineInputPrimary.copyWith(
-          borderSide: BorderSide(color: color ?? AppColors.colorPrimary)),
-      enabledBorder: borderAll
-          ? outlineInputPrimary.copyWith(
-              borderSide: BorderSide(color: color ?? AppColors.grey70))
-          : null,
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(5),
+        borderSide: const BorderSide(color: AppColors.buttonColorDark),
+      ),
+      enabledBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(5),
+        borderSide: const BorderSide(color: Colors.grey),
+      ),
       disabledBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(5),
         borderSide: const BorderSide(color: Colors.grey),

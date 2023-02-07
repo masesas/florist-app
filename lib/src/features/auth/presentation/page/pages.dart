@@ -10,7 +10,6 @@ import 'package:reactive_forms/reactive_forms.dart';
 
 import '../../../../../gen/assets.gen.dart';
 import '../../../../app/routes/routes.dart';
-import '../../../../app/widget/text_field/text_field.dart';
 import '../../../../core/di/injection_container.dart';
 import '../../../../core/helper/form/form.dart';
 import '../cubit/auth_cubit.dart';

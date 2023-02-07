@@ -67,13 +67,13 @@ class _LoginPageState extends State<LoginPage> {
                       formGroup: _form,
                       child: Column(
                         children: [
-                          CustomReactiveTextField(
+                          /* ReactiveInputText(
                             title: AppLocalizations.of(context).userId,
                             formName: FormName.userId,
                             hint: "Entry Your User ID",
                           ),
                           const SizedBox(height: 20),
-                          CustomReactiveTextField(
+                          ReactiveInputText(
                             title: AppLocalizations.of(context).password,
                             formName: FormName.password,
                             hint: "Entry Your Password",
@@ -91,7 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                                 });
                               },
                             ),
-                          ),
+                          ),*/
                         ],
                       ),
                     ),

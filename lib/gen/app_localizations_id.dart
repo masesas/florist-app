@@ -120,4 +120,73 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get setAsDelivery => 'Atur Terkirim';
+
+  @override
+  String get selectOption => 'Pilihan';
+
+  @override
+  String get requestPickup => 'Minta Penjemputan';
+
+  @override
+  String get logistic => 'Logistik';
+
+  @override
+  String get vehicle => 'Kendaraan';
+
+  @override
+  String get pickupFrom => 'Penjemputan';
+
+  @override
+  String get recipientAddress => 'Alamat Penerima';
+
+  @override
+  String get recipientName => 'Nama Penerima';
+
+  @override
+  String get recipientContact => 'Kontak Penerima';
+
+  @override
+  String get remark => 'Ucapan';
+
+  @override
+  String get scheduleProsses => 'Prosses Pengiriman';
+
+  @override
+  String get scheduleTime => 'Jadwal Pengiriman';
+
+  @override
+  String get status => 'Status';
+
+  @override
+  String get driverName => 'Nama Kurir';
+
+  @override
+  String get driverPhone => 'No. Ponsel Kurur';
+
+  @override
+  String get driverPlateNumb => 'No. Polisi Kurir';
+
+  @override
+  String get driverPhoto => 'Foto Kurir';
+
+  @override
+  String get select => 'Pilih';
+
+  @override
+  String get invoiceNumb => 'No. Invoice';
+
+  @override
+  String get deliveryDate => 'Tanggal Pengiriman';
+
+  @override
+  String get sender => 'Pengirim';
+
+  @override
+  String get deliveryOrder => 'Pengiriman Order (DO)';
+
+  @override
+  String get productImage => 'Foto Produk';
+
+  @override
+  String get uploadImage => 'Masukkan Gambar';
 }

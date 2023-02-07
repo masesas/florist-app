@@ -52,8 +52,20 @@ class $FontsGen {
 class $AssetsIconGen {
   const $AssetsIconGen();
 
+  /// File path: assets/icon/ic_add_photo.png
+  AssetGenImage get icAddPhoto =>
+      const AssetGenImage('assets/icon/ic_add_photo.png');
+
   /// File path: assets/icon/ic_id.png
   AssetGenImage get icId => const AssetGenImage('assets/icon/ic_id.png');
+
+  /// File path: assets/icon/ic_no_photo.png
+  AssetGenImage get icNoPhoto =>
+      const AssetGenImage('assets/icon/ic_no_photo.png');
+
+  /// File path: assets/icon/ic_photo_user.png
+  AssetGenImage get icPhotoUser =>
+      const AssetGenImage('assets/icon/ic_photo_user.png');
 
   /// File path: assets/icon/ic_uk.png
   AssetGenImage get icUk => const AssetGenImage('assets/icon/ic_uk.png');
@@ -71,8 +83,16 @@ class $AssetsIconGen {
       const AssetGenImage('assets/icon/logo_titleapp_white_513.png');
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [icId, icUk, logoTitleappBlack, logoTitleappWhite, logoTitleappWhite513];
+  List<AssetGenImage> get values => [
+        icAddPhoto,
+        icId,
+        icNoPhoto,
+        icPhotoUser,
+        icUk,
+        logoTitleappBlack,
+        logoTitleappWhite,
+        logoTitleappWhite513
+      ];
 }
 
 class Assets {

@@ -156,7 +156,10 @@ class _OrderPageState extends State<OrderPage>
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 14.5, horizontal: 10),
             child: badges.Badge(
-              badgeContent: const Text('1'),
+              badgeContent: const Text(
+                '1',
+                style: TextStyle(color: AppColors.white),
+              ),
               child: Container(
                 margin: const EdgeInsets.only(right: 5),
                 child: Text(

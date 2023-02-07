@@ -265,6 +265,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.6"
+  draggable_scrollbar:
+    dependency: "direct main"
+    description:
+      name: draggable_scrollbar
+      sha256: a906e27fc1ee056e2942d66989dd0cb5b70a361e7d44af566cfa1b584054eac3
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.0"
   drift:
     dependency: "direct main"
     description:
@@ -585,10 +593,10 @@ packages:
     dependency: "direct main"
     description:
       name: intl
-      sha256: "910f85bce16fb5c6f614e117efa303e85a1731bb0081edf3604a2ae6e9a3cc91"
+      sha256: a3715e3bc90294e971cb7dc063fbf3cd9ee0ebf8604ffeafabd9e6f16abbdbe6
       url: "https://pub.dev"
     source: hosted
-    version: "0.17.0"
+    version: "0.18.0"
   io:
     dependency: transitive
     description:
@@ -701,6 +709,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
+  modal_bottom_sheet:
+    dependency: "direct main"
+    description:
+      name: modal_bottom_sheet
+      sha256: "3bba63c62d35c931bce7f8ae23a47f9a05836d8cb3c11122ada64e0b2f3d718f"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0-pre"
   modular_core:
     dependency: transitive
     description:
@@ -937,10 +953,34 @@ packages:
     dependency: "direct main"
     description:
       name: reactive_forms
-      sha256: a6dc324c7f69d278163ecefa7d30a7f8af4e0854d4d8d1bdaae1f6baede358af
+      sha256: f81d29d633efcd254aaa18e877c1851e767e02d4fd2ee0b32de1e1574ef075d7
       url: "https://pub.dev"
     source: hosted
-    version: "14.1.0"
+    version: "14.2.0"
+  reactive_forms_annotations:
+    dependency: "direct main"
+    description:
+      name: reactive_forms_annotations
+      sha256: fb685773e8dbdedb25817b38ff5197230eb1962c7b65817d0363e4ad8bb353ca
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.13.2"
+  reactive_forms_generator:
+    dependency: "direct dev"
+    description:
+      name: reactive_forms_generator
+      sha256: "13f645fab080f63d1e5e874dfad18dae994d6af5308e495bfe24e0230a806fd7"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.23.4"
+  recase:
+    dependency: transitive
+    description:
+      name: recase
+      sha256: e4eb4ec2dcdee52dcf99cb4ceabaffc631d7424ee55e56f280bc039737f89213
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.1.0"
   retrofit:
     dependency: "direct main"
     description:
@@ -1037,6 +1077,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.3"
+  simple_gesture_detector:
+    dependency: transitive
+    description:
+      name: simple_gesture_detector
+      sha256: "86d08f85f1f58583b7b4b941d989f48ea6ce08c1724a1d10954a277c2ec36592"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.0"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -1138,6 +1186,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.1"
+  table_calendar:
+    dependency: "direct main"
+    description:
+      name: table_calendar
+      sha256: "1e3521a3e6d3fc7f645a58b135ab663d458ab12504f1ea7f9b4b81d47086c478"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.9"
   term_glyph:
     dependency: transitive
     description:

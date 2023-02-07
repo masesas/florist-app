@@ -326,6 +326,144 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Set As Delivery'**
   String get setAsDelivery;
+
+  /// No description provided for @selectOption.
+  ///
+  /// In en, this message translates to:
+  /// **'Select option'**
+  String get selectOption;
+
+  /// No description provided for @requestPickup.
+  ///
+  /// In en, this message translates to:
+  /// **'Request Pickup'**
+  String get requestPickup;
+
+  /// No description provided for @logistic.
+  ///
+  /// In en, this message translates to:
+  /// **'Logistic'**
+  String get logistic;
+
+  /// No description provided for @vehicle.
+  ///
+  /// In en, this message translates to:
+  /// **'Vehicle'**
+  String get vehicle;
+
+  /// No description provided for @pickupFrom.
+  ///
+  /// In en, this message translates to:
+  /// **'Pickup From'**
+  String get pickupFrom;
+
+  /// No description provided for @recipientAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Recipient Address'**
+  String get recipientAddress;
+
+  /// No description provided for @recipientName.
+  ///
+  /// In en, this message translates to:
+  /// **'Recipient Name'**
+  String get recipientName;
+
+  /// No description provided for @recipientContact.
+  ///
+  /// In en, this message translates to:
+  /// **'Recipient Contact'**
+  String get recipientContact;
+
+  /// No description provided for @remark.
+  ///
+  /// In en, this message translates to:
+  /// **'Remark'**
+  String get remark;
+
+  /// No description provided for @scheduleProsses.
+  ///
+  /// In en, this message translates to:
+  /// **'Schedule Prosses'**
+  String get scheduleProsses;
+
+  /// No description provided for @scheduleTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Schedule Time'**
+  String get scheduleTime;
+
+  /// No description provided for @status.
+  ///
+  /// In en, this message translates to:
+  /// **'Status'**
+  String get status;
+
+  /// No description provided for @driverName.
+  ///
+  /// In en, this message translates to:
+  /// **'Driver Name'**
+  String get driverName;
+
+  /// No description provided for @driverPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Driver Phone'**
+  String get driverPhone;
+
+  /// No description provided for @driverPlateNumb.
+  ///
+  /// In en, this message translates to:
+  /// **'Driver Plate Number'**
+  String get driverPlateNumb;
+
+  /// No description provided for @driverPhoto.
+  ///
+  /// In en, this message translates to:
+  /// **'Driver Photo'**
+  String get driverPhoto;
+
+  /// No description provided for @select.
+  ///
+  /// In en, this message translates to:
+  /// **'Select'**
+  String get select;
+
+  /// No description provided for @invoiceNumb.
+  ///
+  /// In en, this message translates to:
+  /// **'Invoice No.'**
+  String get invoiceNumb;
+
+  /// No description provided for @deliveryDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery Date'**
+  String get deliveryDate;
+
+  /// No description provided for @sender.
+  ///
+  /// In en, this message translates to:
+  /// **'Sender'**
+  String get sender;
+
+  /// No description provided for @deliveryOrder.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery Order (DO)'**
+  String get deliveryOrder;
+
+  /// No description provided for @productImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Product Image'**
+  String get productImage;
+
+  /// No description provided for @uploadImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload Image'**
+  String get uploadImage;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

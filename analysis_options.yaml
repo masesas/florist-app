@@ -13,6 +13,7 @@ analyzer:
   exclude:
     - "**/*.g.dart"
     - "**/*.freezed.dart"
+    - "**/*.gform.dart"
     - "lib/generated_plugin_registrant.dart"
   language:
     strict-casts: true

@@ -15,11 +15,12 @@ class ItemOrder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool isHideBtn = false;
     late String primaryTitleBtn;
     String? secondaryTitleBtn;
     Color? secondaryColorBtn;
     Widget? completedWidget;
+    Function()? onClickPrimaryBtn; // primary indicate with right position
+    Function()? onClickSecondaryBtn; // secondary indicate with left position
 
     switch (orderFlag) {
       case OrderEnum.NEW_ORDER:
@@ -28,14 +29,20 @@ class ItemOrder extends StatelessWidget {
         break;
       case OrderEnum.ACCEPTED:
         primaryTitleBtn = context.lang.requestShipping;
+        onClickPrimaryBtn = () {
+          //Modular.to.pushNamed(OrderRoutes.ORDER_SHIPPING_FORM);
+          Modular.to.pushNamed(OrderRoutes.ORDER_SHIPPING);
+        };
         break;
       case OrderEnum.PREPARE_DELIVERY:
         primaryTitleBtn = context.lang.setAsDelivery;
         secondaryTitleBtn = context.lang.remindDriver;
         secondaryColorBtn = AppColors.colorUnHighlightText;
+        onClickPrimaryBtn = () {
+          Modular.to.pushNamed(OrderRoutes.ORDER_SET_AS_DELIVERY);
+        };
         break;
       case OrderEnum.DELIVERED:
-        isHideBtn = true;
         completedWidget = Container(
           alignment: Alignment.center,
           child: Text('Completed', style: AppStyles.fontBold16),
@@ -101,7 +108,7 @@ class ItemOrder extends StatelessWidget {
                     Expanded(
                       child: ButtonPrimary(
                         title: secondaryTitleBtn,
-                        color: secondaryColorBtn ?? AppColors.buttonColorReject,
+                        color: secondaryColorBtn ?? AppColors.btnColor2nd,
                         height: 37,
                         onClick: () {},
                       ),
@@ -111,7 +118,11 @@ class ItemOrder extends StatelessWidget {
                     child: ButtonPrimary(
                       title: primaryTitleBtn,
                       height: 37,
-                      onClick: () {},
+                      onClick: () {
+                        if (onClickPrimaryBtn != null) {
+                          onClickPrimaryBtn();
+                        }
+                      },
                     ),
                   ),
                 ],

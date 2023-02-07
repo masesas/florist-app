@@ -33,12 +33,16 @@ dependencies:
 
   #widget
   cached_network_image: ^3.2.3 #images support
-  reactive_forms: ^14.1.0 #forms inputs and validations
+  reactive_forms: ^14.2.0
   loader_overlay: ^2.1.0 #fully load screen
   badges: ^3.0.2 #badges widget
   fl_chart: ^0.60.0 #line chart widget
   material_dialogs: ^1.1.4 #dialog widget
   google_maps_flutter: ^2.2.3 #google maps widget
+  table_calendar: ^3.0.9 #calendar
+  modal_bottom_sheet: ^3.0.0-pre
+  reactive_forms_annotations: #anotation for generate reactive form widget
+
 
   #location support
   geolocator: ^9.0.2
@@ -56,7 +60,7 @@ dependencies:
   flutter_bloc: ^8.1.1
 
   #localization, formatting and many more support
-  intl: ^0.17.0 # dont upgrade this, will not match with reactive form
+  intl: ^0.18.0 # dont upgrade this, will not match with reactive form
 
   #usecase support
   either_dart: ^0.3.0
@@ -69,6 +73,10 @@ dependencies:
 
   #logging utils
   logger: ^1.1.0
+
+dependency_overrides:
+  intl: ^0.18.0
+  modal_bottom_sheet: ^3.0.0-pre
 
 dev_dependencies:
   flutter_test:
@@ -87,6 +95,9 @@ dev_dependencies:
 
   #utils
   flutter_lints: ^2.0.0
+
+  #reactive form generator
+  reactive_forms_generator: ^0.23.4
 
 flutter:
 

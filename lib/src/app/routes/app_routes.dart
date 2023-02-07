@@ -19,6 +19,9 @@ class Routes {
   /// * Orders
   static const String ORDERS = "/orders";
   static const String SEARCH_ORDER = "/search-order";
+  static const String REQUEST_SHIPPING_FORM = "/request-shipping-form";
+  static const String REQUEST_SHIPPING = "/request-shipping";
+  static const String SET_AS_DELIVERY = "/set-as-delivery";
 }
 
 class AppRoutes extends Module {
@@ -36,10 +39,5 @@ class AppRoutes extends Module {
 
         /// * Order Routes
         ModuleRoute(Routes.ORDERS, module: OrderRoutes()),
-
-        /*ChildRoute(Routes.payment,
-            child: (context, args) => PaymentWebviewPage(
-                  url: args.data,
-                )),*/
       ];
 }

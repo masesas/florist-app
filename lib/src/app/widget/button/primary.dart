@@ -8,6 +8,7 @@ class ButtonPrimary extends StatelessWidget {
   final bool isEnabled;
   final double? width;
   final double? height;
+  final double? textSize;
 
   const ButtonPrimary({
     Key? key,
@@ -18,6 +19,7 @@ class ButtonPrimary extends StatelessWidget {
     this.isEnabled = true,
     this.width,
     this.height,
+    this.textSize,
   }) : super(key: key);
 
   @override
@@ -25,6 +27,7 @@ class ButtonPrimary extends StatelessWidget {
     return IntrinsicWidth(
       child: SizedBox(
         height: height ?? 50,
+        width: width,
         child: ElevatedButton(
           onPressed: isLoading ? null : onClick,
           style: ElevatedButton.styleFrom(
@@ -54,8 +57,10 @@ class ButtonPrimary extends StatelessWidget {
     } else {
       return Text(
         title,
+        textAlign: TextAlign.center,
         style: AppStyles.fontBold16.copyWith(
           color: AppColors.colorBackground,
+          fontSize: textSize,
         ),
       );
     }
