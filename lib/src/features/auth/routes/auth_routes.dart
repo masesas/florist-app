@@ -1,10 +1,13 @@
 import 'package:flutter_modular/flutter_modular.dart';
 
-import '../../../app/routes/routes.dart';
+import '../../../app/app_module.dart';
 import '../presentation/page/pages.dart';
 
 class AuthRoutes extends Module {
   static const String AUTH_LOGIN = "${Routes.AUTH}${Routes.LOGIN}";
+
+  @override
+  List<Bind<Object>> get binds => [];
 
   @override
   List<ModularRoute> get routes => [

@@ -189,4 +189,42 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get uploadImage => 'Masukkan Gambar';
+
+  @override
+  String get ignoreLocationPermission => 'Ijinkan aplikasi untuk mengakses lokasi untuk fitur ini';
+
+  @override
+  String get ignoreLocationAndGps => 'Ijinkan Aplikasi Untuk Mengakses Lokasi dan Nyalanan GPS di Pengaturan Handphone';
+
+  @override
+  String get close => 'Tutup';
+
+  @override
+  String get locationDetails => 'Lokasi Detail';
+
+  @override
+  String get selectAddress => 'Pilih Alamat';
+
+  @override
+  String get orderIn => 'OrderMasuk';
+
+  @override
+  String get rejected => 'Di Tolak';
+
+  @override
+  String get missed => 'Terlewat';
+
+  @override
+  String get dataAnalysis => 'Data & Analisis';
+
+  @override
+  String get zoomTooFar => 'Posisi Zoom Terlalu Jauh, Dekatkan Zoom Untuk Mendapatkan Lokasi Yg Spesifik';
+
+  @override
+  String get confirmation => 'Konfirmasi';
+
+  @override
+  String updateSuccessfully(Object type, Object name) {
+    return '$name Update Berhasil';
+  }
 }

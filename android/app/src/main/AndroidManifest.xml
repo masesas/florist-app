@@ -1,7 +1,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.flower.advisor.florist.florist_app">
 
+    <!--Networking-->
     <uses-permission android:name="android.permission.INTERNET"/>
+    <!--Networking-->
+
+    <!--Location-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--Location-->
+
+    <!--Picture Picker-->
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!--Picture Picker-->
 
    <application
         android:label="florist_app"
@@ -28,6 +41,12 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+       <!-- Google Maps Api Key Used On FlowerAdvisor -->
+       <meta-data android:name="com.google.android.geo.API_KEY"
+           android:value="AIzaSyDTas2FKIaZgXO5x0ata5bhaMyXqxi15bY"/>
+       <!-- Google Maps Api Key Used On FlowerAdvisor -->
+
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
         <meta-data

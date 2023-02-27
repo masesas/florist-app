@@ -6,12 +6,8 @@ class AuthLocalImpl extends AuthLocal {
   AuthLocalImpl({required this.sharePref});
 
   @override
-  Future<void> setUserToken(String token) async {
+  Future<void> setUserLogin({required String token, int? expiresIn}) async {
     await sharePref.setUserToken(token);
-  }
-
-  @override
-  Future<void> setUser(UserModel user) async {
-    await sharePref.setUser(jsonEncode(user.toJson()));
+    await sharePref.setUserExpiresIn(expiresIn);
   }
 }

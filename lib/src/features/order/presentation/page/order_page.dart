@@ -41,17 +41,12 @@ class _OrderPageState extends State<OrderPage>
 
   void _initTabControl() {
     int numberOfTabs = _statusRequest.length;
-    //List<int> orderLength = List.generate(numberOfTabs, (index) => 0);
     _statusKeys = List.generate(numberOfTabs, (index) => GlobalKey()).toList();
-    //Controller changing tab to reset data
     _tabController = TabController(
         length: numberOfTabs, vsync: this, initialIndex: widget.selectedTab);
     _tabController.animation!.addListener(
       () async {
-        if (_selectedTab != _tabController.index) {
-          /*  String status = _statusRequest[_tabController.index];
-          int orderLengthInTab = orderLength[_tabController.index];*/
-        }
+        if (_selectedTab != _tabController.index) {}
         _selectedTab = _tabController.index;
       },
     );
@@ -66,64 +61,71 @@ class _OrderPageState extends State<OrderPage>
       context.lang.delivered,
     ];
 
-    return Scaffold(
-      backgroundColor: AppColors.bgColorGrey,
-      body: GestureDetector(
-        onTap: () => FocusScope.of(context).unfocus(),
-        child: Stack(
-          children: [
-            Column(
-              children: [
-                _buildTabBarStatus(),
-                _buildTabPageItem(),
-              ],
-            ),
-          ],
+    return BlocProvider(
+      create: (context) => Modular.get<OrderStatusCubit>()..getOrderStatus(),
+      child: Scaffold(
+        backgroundColor: AppColors.bgColorGrey,
+        body: GestureDetector(
+          onTap: () => FocusScope.of(context).unfocus(),
+          child: Stack(
+            children: [
+              Column(
+                children: [
+                  _buildTabBarStatus(),
+                  _buildTabPageItem(),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 
   Widget _buildTabBarStatus() {
-    return StatefulBuilder(builder: (context, setState) {
-      return IntrinsicHeight(
-        child: Column(
-          children: [
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
-              color: AppColors.colorPrimaryDark,
-              child: TabBar(
-                controller: _tabController,
-                tabs: List.generate(
-                  _statusList.length,
-                  (index) => _buildTab(
-                    _statusList[index],
-                    key: _statusKeys[index],
-                    index: index,
+    return BlocBuilder<OrderStatusCubit, OrderStatusState>(
+      builder: (context, state) {
+        return StatefulBuilder(builder: (context, setState) {
+          return IntrinsicHeight(
+            child: Column(
+              children: [
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  color: AppColors.colorPrimaryDark,
+                  child: TabBar(
+                    controller: _tabController,
+                    tabs: List.generate(
+                      _statusList.length,
+                      (index) => _buildTab(
+                        _statusList[index],
+                        key: _statusKeys[index],
+                        index: index,
+                      ),
+                    ),
+                    isScrollable: true,
+                    indicatorColor: Colors.transparent,
+                    indicatorPadding: EdgeInsets.zero,
+                    indicator: const BoxDecoration(),
+                    indicatorWeight: 0.01,
+                    labelPadding: EdgeInsets.zero,
+                    onTap: (index) {
+                      setState(() {
+                        _tabController.index = index;
+                      });
+                    },
                   ),
                 ),
-                isScrollable: true,
-                indicatorColor: Colors.transparent,
-                indicatorPadding: EdgeInsets.zero,
-                indicator: const BoxDecoration(),
-                indicatorWeight: 0.01,
-                labelPadding: EdgeInsets.zero,
-                onTap: (index) {
-                  setState(() {
-                    _tabController.index = index;
-                  });
-                },
-              ),
+                Container(
+                  height: 1,
+                  width: double.infinity,
+                  color: Colors.black.withOpacity(0.16),
+                )
+              ],
             ),
-            Container(
-              height: 1,
-              width: double.infinity,
-              color: Colors.black.withOpacity(0.16),
-            )
-          ],
-        ),
-      );
-    });
+          );
+        });
+      },
+    );
   }
 
   Widget _buildTabPageItem() {

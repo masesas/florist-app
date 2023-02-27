@@ -10,9 +10,13 @@ class ChangePassword {
   final String confirmPassword;
 
   ChangePassword({
-    @FormControlAnnotation<String>(validators: [requiredValidator])
-        this.newPassword = "",
-    @FormControlAnnotation<String>(validators: [requiredValidator])
-        this.confirmPassword = "",
+    @FormControlAnnotation<String>(validators: [
+      requiredValidator,
+    ])
+        this.newPassword = '',
+    @FormControlAnnotation<String>(validators: [
+      requiredValidator,
+    ])
+        this.confirmPassword = '',
   });
 }

@@ -1,44 +1,44 @@
 part of 'pages.dart';
 
-class AccountPage extends StatefulWidget {
+class AccountPage extends StatelessWidget {
   const AccountPage({Key? key}) : super(key: key);
 
   @override
-  State<AccountPage> createState() => _AccountPageState();
-}
-
-class _AccountPageState extends State<AccountPage> {
-  @override
-  void initState() {
-    super.initState();
-    //LoggerUtils.printInfo("ACCOUNT INIT");
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey.shade300,
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(height: 20),
-          _buildDataAnalysis(),
-          const SizedBox(height: 20),
-          _buildListItem(),
-        ],
+    return BlocProvider(
+      create: (context) =>
+          Modular.get<AccountBloc>()..add(InitialAccountEvent()),
+      child: Scaffold(
+        backgroundColor: AppColors.bgColorGrey,
+        body: BlocConsumer<AccountBloc, AccountState>(
+          listener: (context, state) {
+            if (state is LogoutLoadingState) {
+              context.showFullLoading();
+            } else {
+              context.hideFullLoading();
+            }
+
+            if (state is LogoutSuccessState) {
+              Modular.to.navigate(Routes.SPLASH);
+            } else if (state is LogoutFailState) {
+              showDialogInfo(context: context, message: state.message);
+            }
+          },
+          builder: (context, state) {
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(height: AppSize.spaceDefault),
+                _buildListItem(context, state),
+              ],
+            );
+          },
+        ),
       ),
     );
   }
 
-  Widget _buildDataAnalysis() {
-    return const BoxPrimary(
-        child: Padding(
-      padding: EdgeInsets.all(10),
-      child: Center(child: Text('This is Data')),
-    ));
-  }
-
-  Widget _buildListItem() {
+  Widget _buildListItem(BuildContext context, AccountState state) {
     return BoxPrimary(
       child: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
@@ -46,11 +46,15 @@ class _AccountPageState extends State<AccountPage> {
           mainAxisSize: MainAxisSize.min,
           children: [
             _buildItem(
-                title: context.lang.floristInformation,
-                icon: Icons.home,
-                onClick: () {
-                  Modular.to.pushNamed(AccountRoutes.ACC_INFO);
-                }),
+              title: context.lang.floristInformation,
+              icon: Icons.home,
+              onClick: () {
+                Modular.to.pushNamed(
+                  AccountModule.ACC_INFO,
+                  arguments: state.userEntity,
+                );
+              },
+            ),
             const Divider(
               color: AppColors.colorBackgroundGrey,
             ),
@@ -58,7 +62,7 @@ class _AccountPageState extends State<AccountPage> {
               title: context.lang.changeAddress,
               icon: Icons.location_pin,
               onClick: () =>
-                  Modular.to.pushNamed(AccountRoutes.ACC_CHANGE_ADDRESS),
+                  Modular.to.pushNamed(AccountModule.ACC_CHANGE_ADDRESS),
             ),
             const Divider(
               color: AppColors.colorBackgroundGrey,
@@ -66,7 +70,7 @@ class _AccountPageState extends State<AccountPage> {
             _buildItem(
               title: context.lang.changePw,
               icon: Icons.lock,
-              onClick: () => Modular.to.pushNamed(AccountRoutes.ACC_CHANGE_PW),
+              onClick: () => Modular.to.pushNamed(AccountModule.ACC_CHANGE_PW),
             ),
             const Divider(
               color: AppColors.colorBackgroundGrey,
@@ -75,7 +79,7 @@ class _AccountPageState extends State<AccountPage> {
               title: context.lang.language,
               icon: Icons.language,
               onClick: () =>
-                  Modular.to.pushNamed(AccountRoutes.ACC_CHANGE_LANG),
+                  Modular.to.pushNamed(AccountModule.ACC_CHANGE_LANG),
             ),
             const Divider(
               color: AppColors.colorBackgroundGrey,
@@ -83,10 +87,7 @@ class _AccountPageState extends State<AccountPage> {
             _buildItem(
               title: context.lang.logout,
               icon: Icons.logout,
-              onClick: () => showDialogConfirmation(context,
-                  message: context.lang.logoutConfirmation, onYes: () {
-                Modular.to.pop();
-              }),
+              onClick: () => _showDialogLogout(context),
             ),
           ],
         ),
@@ -107,6 +108,40 @@ class _AccountPageState extends State<AccountPage> {
       ),
       trailing: const Icon(Icons.arrow_forward_ios_rounded),
       onTap: onClick,
+    );
+  }
+
+  void _showDialogLogout(BuildContext context) {
+    Dialogs.materialDialog(
+      context: context,
+      barrierDismissible: false,
+      customView: Padding(
+        padding: const EdgeInsets.all(AppSize.spaceSmall),
+        child: Column(
+          children: [
+            Text(
+              context.lang.confirmation,
+              style: AppStyles.fontBold22,
+            ),
+            const SizedBox(height: AppSize.spaceDefault),
+            Text(
+              context.lang.logoutConfirmation,
+              style: AppStyles.fontSemiBold14.copyWith(fontSize: 16),
+            ),
+          ],
+        ),
+      ),
+      actions: [
+        ButtonPrimary(
+          color: AppColors.btnDisabled,
+          title: context.lang.no,
+          onClick: () => Modular.to.pop(),
+        ),
+        ButtonPrimary(
+          title: context.lang.logout,
+          onClick: () => context.read<AccountBloc>().add(LogoutEvent()),
+        ),
+      ],
     );
   }
 }

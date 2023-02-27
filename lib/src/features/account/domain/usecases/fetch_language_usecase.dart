@@ -1,4 +1,4 @@
-part of '../language_domain.dart';
+part of '../domain.dart';
 
 class FetchLanguageUseCase extends UseCaseWithoutParam<LanguageEntity> {
   final LanguageRepository languageRepository;

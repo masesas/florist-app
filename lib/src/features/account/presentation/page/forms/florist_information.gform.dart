@@ -197,12 +197,6 @@ class FloristInformationForm implements FormModel<FloristInformation> {
 
   static String emailControlName = "email";
 
-  static String addressControlName = "address";
-
-  static String latitudeControlName = "latitude";
-
-  static String longitudeControlName = "longitude";
-
   final FloristInformation? floristInformation;
 
   final FormGroup form;
@@ -212,15 +206,9 @@ class FloristInformationForm implements FormModel<FloristInformation> {
   String floristNameControlPath() => pathBuilder(floristNameControlName);
   String contactPersonControlPath() => pathBuilder(contactPersonControlName);
   String emailControlPath() => pathBuilder(emailControlName);
-  String addressControlPath() => pathBuilder(addressControlName);
-  String latitudeControlPath() => pathBuilder(latitudeControlName);
-  String longitudeControlPath() => pathBuilder(longitudeControlName);
   String? get _floristNameValue => floristNameControl?.value;
   String? get _contactPersonValue => contactPersonControl?.value;
   String? get _emailValue => emailControl?.value;
-  String? get _addressValue => addressControl?.value;
-  double? get _latitudeValue => latitudeControl?.value;
-  double? get _longitudeValue => longitudeControl?.value;
   bool get containsFloristName {
     try {
       form.control(floristNameControlPath());
@@ -248,45 +236,12 @@ class FloristInformationForm implements FormModel<FloristInformation> {
     }
   }
 
-  bool get containsAddress {
-    try {
-      form.control(addressControlPath());
-      return true;
-    } catch (e) {
-      return false;
-    }
-  }
-
-  bool get containsLatitude {
-    try {
-      form.control(latitudeControlPath());
-      return true;
-    } catch (e) {
-      return false;
-    }
-  }
-
-  bool get containsLongitude {
-    try {
-      form.control(longitudeControlPath());
-      return true;
-    } catch (e) {
-      return false;
-    }
-  }
-
   Object? get floristNameErrors => floristNameControl?.errors;
   Object? get contactPersonErrors => contactPersonControl?.errors;
   Object? get emailErrors => emailControl?.errors;
-  Object? get addressErrors => addressControl?.errors;
-  Object? get latitudeErrors => latitudeControl?.errors;
-  Object? get longitudeErrors => longitudeControl?.errors;
   void get floristNameFocus => form.focus(floristNameControlPath());
   void get contactPersonFocus => form.focus(contactPersonControlPath());
   void get emailFocus => form.focus(emailControlPath());
-  void get addressFocus => form.focus(addressControlPath());
-  void get latitudeFocus => form.focus(latitudeControlPath());
-  void get longitudeFocus => form.focus(longitudeControlPath());
   void floristNameRemove({
     bool updateParent = true,
     bool emitEvent = true,
@@ -365,84 +320,6 @@ class FloristInformationForm implements FormModel<FloristInformation> {
     }
   }
 
-  void addressRemove({
-    bool updateParent = true,
-    bool emitEvent = true,
-  }) {
-    if (containsAddress) {
-      final controlPath = path;
-      if (controlPath == null) {
-        form.removeControl(
-          addressControlName,
-          updateParent: updateParent,
-          emitEvent: emitEvent,
-        );
-      } else {
-        final formGroup = form.control(controlPath);
-
-        if (formGroup is FormGroup) {
-          formGroup.removeControl(
-            addressControlName,
-            updateParent: updateParent,
-            emitEvent: emitEvent,
-          );
-        }
-      }
-    }
-  }
-
-  void latitudeRemove({
-    bool updateParent = true,
-    bool emitEvent = true,
-  }) {
-    if (containsLatitude) {
-      final controlPath = path;
-      if (controlPath == null) {
-        form.removeControl(
-          latitudeControlName,
-          updateParent: updateParent,
-          emitEvent: emitEvent,
-        );
-      } else {
-        final formGroup = form.control(controlPath);
-
-        if (formGroup is FormGroup) {
-          formGroup.removeControl(
-            latitudeControlName,
-            updateParent: updateParent,
-            emitEvent: emitEvent,
-          );
-        }
-      }
-    }
-  }
-
-  void longitudeRemove({
-    bool updateParent = true,
-    bool emitEvent = true,
-  }) {
-    if (containsLongitude) {
-      final controlPath = path;
-      if (controlPath == null) {
-        form.removeControl(
-          longitudeControlName,
-          updateParent: updateParent,
-          emitEvent: emitEvent,
-        );
-      } else {
-        final formGroup = form.control(controlPath);
-
-        if (formGroup is FormGroup) {
-          formGroup.removeControl(
-            longitudeControlName,
-            updateParent: updateParent,
-            emitEvent: emitEvent,
-          );
-        }
-      }
-    }
-  }
-
   void floristNameValueUpdate(
     String? value, {
     bool updateParent = true,
@@ -467,33 +344,6 @@ class FloristInformationForm implements FormModel<FloristInformation> {
     bool emitEvent = true,
   }) {
     emailControl?.updateValue(value,
-        updateParent: updateParent, emitEvent: emitEvent);
-  }
-
-  void addressValueUpdate(
-    String? value, {
-    bool updateParent = true,
-    bool emitEvent = true,
-  }) {
-    addressControl?.updateValue(value,
-        updateParent: updateParent, emitEvent: emitEvent);
-  }
-
-  void latitudeValueUpdate(
-    double? value, {
-    bool updateParent = true,
-    bool emitEvent = true,
-  }) {
-    latitudeControl?.updateValue(value,
-        updateParent: updateParent, emitEvent: emitEvent);
-  }
-
-  void longitudeValueUpdate(
-    double? value, {
-    bool updateParent = true,
-    bool emitEvent = true,
-  }) {
-    longitudeControl?.updateValue(value,
         updateParent: updateParent, emitEvent: emitEvent);
   }
 
@@ -524,33 +374,6 @@ class FloristInformationForm implements FormModel<FloristInformation> {
         updateParent: updateParent, emitEvent: emitEvent);
   }
 
-  void addressValuePatch(
-    String? value, {
-    bool updateParent = true,
-    bool emitEvent = true,
-  }) {
-    addressControl?.patchValue(value,
-        updateParent: updateParent, emitEvent: emitEvent);
-  }
-
-  void latitudeValuePatch(
-    double? value, {
-    bool updateParent = true,
-    bool emitEvent = true,
-  }) {
-    latitudeControl?.patchValue(value,
-        updateParent: updateParent, emitEvent: emitEvent);
-  }
-
-  void longitudeValuePatch(
-    double? value, {
-    bool updateParent = true,
-    bool emitEvent = true,
-  }) {
-    longitudeControl?.patchValue(value,
-        updateParent: updateParent, emitEvent: emitEvent);
-  }
-
   void floristNameValueReset(
     String? value, {
     bool updateParent = true,
@@ -578,33 +401,6 @@ class FloristInformationForm implements FormModel<FloristInformation> {
   }) =>
       emailControl?.reset(
           value: value, updateParent: updateParent, emitEvent: emitEvent);
-  void addressValueReset(
-    String? value, {
-    bool updateParent = true,
-    bool emitEvent = true,
-    bool removeFocus = false,
-    bool? disabled,
-  }) =>
-      addressControl?.reset(
-          value: value, updateParent: updateParent, emitEvent: emitEvent);
-  void latitudeValueReset(
-    double? value, {
-    bool updateParent = true,
-    bool emitEvent = true,
-    bool removeFocus = false,
-    bool? disabled,
-  }) =>
-      latitudeControl?.reset(
-          value: value, updateParent: updateParent, emitEvent: emitEvent);
-  void longitudeValueReset(
-    double? value, {
-    bool updateParent = true,
-    bool emitEvent = true,
-    bool removeFocus = false,
-    bool? disabled,
-  }) =>
-      longitudeControl?.reset(
-          value: value, updateParent: updateParent, emitEvent: emitEvent);
   FormControl<String>? get floristNameControl => containsFloristName
       ? form.control(floristNameControlPath()) as FormControl<String>?
       : null;
@@ -613,15 +409,6 @@ class FloristInformationForm implements FormModel<FloristInformation> {
       : null;
   FormControl<String>? get emailControl => containsEmail
       ? form.control(emailControlPath()) as FormControl<String>?
-      : null;
-  FormControl<String>? get addressControl => containsAddress
-      ? form.control(addressControlPath()) as FormControl<String>?
-      : null;
-  FormControl<double>? get latitudeControl => containsLatitude
-      ? form.control(latitudeControlPath()) as FormControl<double>?
-      : null;
-  FormControl<double>? get longitudeControl => containsLongitude
-      ? form.control(longitudeControlPath()) as FormControl<double>?
       : null;
   void floristNameSetDisabled(
     bool disabled, {
@@ -677,60 +464,6 @@ class FloristInformationForm implements FormModel<FloristInformation> {
     }
   }
 
-  void addressSetDisabled(
-    bool disabled, {
-    bool updateParent = true,
-    bool emitEvent = true,
-  }) {
-    if (disabled) {
-      addressControl?.markAsDisabled(
-        updateParent: updateParent,
-        emitEvent: emitEvent,
-      );
-    } else {
-      addressControl?.markAsEnabled(
-        updateParent: updateParent,
-        emitEvent: emitEvent,
-      );
-    }
-  }
-
-  void latitudeSetDisabled(
-    bool disabled, {
-    bool updateParent = true,
-    bool emitEvent = true,
-  }) {
-    if (disabled) {
-      latitudeControl?.markAsDisabled(
-        updateParent: updateParent,
-        emitEvent: emitEvent,
-      );
-    } else {
-      latitudeControl?.markAsEnabled(
-        updateParent: updateParent,
-        emitEvent: emitEvent,
-      );
-    }
-  }
-
-  void longitudeSetDisabled(
-    bool disabled, {
-    bool updateParent = true,
-    bool emitEvent = true,
-  }) {
-    if (disabled) {
-      longitudeControl?.markAsDisabled(
-        updateParent: updateParent,
-        emitEvent: emitEvent,
-      );
-    } else {
-      longitudeControl?.markAsEnabled(
-        updateParent: updateParent,
-        emitEvent: emitEvent,
-      );
-    }
-  }
-
   @override
   FloristInformation get model {
     if (!form.valid) {
@@ -739,13 +472,9 @@ class FloristInformationForm implements FormModel<FloristInformation> {
       );
     }
     return FloristInformation(
-        userId: floristInformation?.userId,
         floristName: _floristNameValue,
         contactPerson: _contactPersonValue,
-        email: _emailValue,
-        address: _addressValue,
-        latitude: _latitudeValue,
-        longitude: _longitudeValue);
+        email: _emailValue);
   }
 
   FloristInformationForm copyWithPath(String? path) {
@@ -790,54 +519,21 @@ class FloristInformationForm implements FormModel<FloristInformation> {
   FormGroup formElements() => FormGroup({
         floristNameControlName: FormControl<String>(
             value: floristInformation?.floristName,
-            validators: [
-              (control) => requiredValidator(control as FormControl<String>)
-            ],
+            validators: [],
             asyncValidators: [],
             asyncValidatorsDebounceTime: 250,
             disabled: false,
             touched: false),
         contactPersonControlName: FormControl<String>(
             value: floristInformation?.contactPerson,
-            validators: [
-              (control) => requiredValidator(control as FormControl<String>)
-            ],
+            validators: [],
             asyncValidators: [],
             asyncValidatorsDebounceTime: 250,
             disabled: false,
             touched: false),
         emailControlName: FormControl<String>(
             value: floristInformation?.email,
-            validators: [
-              (control) => requiredValidator(control as FormControl<String>)
-            ],
-            asyncValidators: [],
-            asyncValidatorsDebounceTime: 250,
-            disabled: false,
-            touched: false),
-        addressControlName: FormControl<String>(
-            value: floristInformation?.address,
-            validators: [
-              (control) => requiredValidator(control as FormControl<String>)
-            ],
-            asyncValidators: [],
-            asyncValidatorsDebounceTime: 250,
-            disabled: false,
-            touched: false),
-        latitudeControlName: FormControl<double>(
-            value: floristInformation?.latitude,
-            validators: [
-              (control) => requiredValidator(control as FormControl<double>)
-            ],
-            asyncValidators: [],
-            asyncValidatorsDebounceTime: 250,
-            disabled: false,
-            touched: false),
-        longitudeControlName: FormControl<double>(
-            value: floristInformation?.longitude,
-            validators: [
-              (control) => requiredValidator(control as FormControl<double>)
-            ],
+            validators: [],
             asyncValidators: [],
             asyncValidatorsDebounceTime: 250,
             disabled: false,

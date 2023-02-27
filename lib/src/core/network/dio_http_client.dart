@@ -1,8 +1,4 @@
-import 'package:dio/dio.dart';
-import 'package:dio/native_imp.dart';
-import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-
-import '../constants/app_constants.dart';
+part of 'network.dart';
 
 class DioHttpClient extends DioForNative {
   static const String KEY_ACCEPT = "Accept";
@@ -24,21 +20,28 @@ class DioHttpClient extends DioForNative {
       onResponse: _responseInterceptor,
       onError: _errorInterceptor,
     ));
-    interceptors.add(PrettyDioLogger(
-      requestHeader: true,
-      requestBody: true,
-      responseBody: true,
-      responseHeader: true,
-    ));
+
+    if (kDebugMode) {
+      interceptors.add(PrettyDioLogger(
+        requestHeader: true,
+        requestBody: true,
+        responseBody: true,
+        responseHeader: true,
+      ));
+    }
   }
 
   _requestInterceptor(
       RequestOptions options, RequestInterceptorHandler handler) async {
-/*    String? tokenValue = await AppShared.getTokenValue();
-    String language = await AppShared.getLanguage() ?? AppConstants.EN;
+    String? tokenValue = await getIt<SharePrefUtils>().getUserToken();
+    String userAgent = getIt<GlobalVariableUtils>().getUserAgent();
+    String language =
+        await getIt<SharePrefUtils>().getLanguage() ?? AppConstants.EN;
+
+    /*
     String countryCode = getIt<GlobalVariable>().getCountryCode();
     String currency = getIt<GlobalVariable>().getCurrency();
-    String userAgent = getIt<GlobalVariable>().getUserAgent();
+   ;*/
 
     options.headers = {};
     if (options.headers.containsKey(KEY_AUTH)) {
@@ -46,15 +49,19 @@ class DioHttpClient extends DioForNative {
     }
     if (tokenValue != null && tokenValue.isNotEmpty) {
       options.headers[KEY_AUTH] = "Bearer $tokenValue";
-    }*/
+    }
 
     options.headers[KEY_ACCEPT] = "application/json";
     options.headers[KEY_X_API] = VALUE_X_API;
     options.headers[KEY_X_USER] = VALUE_X_USER;
-    //options.headers[USER_AGENT] = userAgent;
+    options.headers[USER_AGENT] = userAgent;
 
     options.connectTimeout = 30000;
     options.receiveTimeout = 30000;
+
+    if (language.isNotEmpty) {
+      //options.queryParameters.addAll({"language": language});
+    }
 
     /*  if (options.queryParameters['country_code'] == null) {
       if (countryCode.isNotEmpty) {
@@ -66,9 +73,8 @@ class DioHttpClient extends DioForNative {
         options.queryParameters.addAll({"currency": currency});
       }
     }
-    if (language.isNotEmpty) {
-      options.queryParameters.addAll({"language": language});
-    }*/
+    */
+    //final url = options.uri.toString();
 
     handler.next(options);
   }
@@ -79,6 +85,7 @@ class DioHttpClient extends DioForNative {
   }
 
   _errorInterceptor(DioError dioError, ErrorInterceptorHandler handler) {
+    //handler.resolve(dioError.response!);
     handler.next(dioError);
   }
 }

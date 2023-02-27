@@ -464,6 +464,78 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Upload Image'**
   String get uploadImage;
+
+  /// No description provided for @ignoreLocationPermission.
+  ///
+  /// In en, this message translates to:
+  /// **'You need to grant location permission to use this feature'**
+  String get ignoreLocationPermission;
+
+  /// No description provided for @ignoreLocationAndGps.
+  ///
+  /// In en, this message translates to:
+  /// **'Please Grant Location Permission and Turn On Your GPS Services In Phone Setting'**
+  String get ignoreLocationAndGps;
+
+  /// No description provided for @close.
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get close;
+
+  /// No description provided for @locationDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Location Details'**
+  String get locationDetails;
+
+  /// No description provided for @selectAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Address'**
+  String get selectAddress;
+
+  /// No description provided for @orderIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Order In'**
+  String get orderIn;
+
+  /// No description provided for @rejected.
+  ///
+  /// In en, this message translates to:
+  /// **'Rejected'**
+  String get rejected;
+
+  /// No description provided for @missed.
+  ///
+  /// In en, this message translates to:
+  /// **'Missed'**
+  String get missed;
+
+  /// No description provided for @dataAnalysis.
+  ///
+  /// In en, this message translates to:
+  /// **'Data & Analysis'**
+  String get dataAnalysis;
+
+  /// No description provided for @zoomTooFar.
+  ///
+  /// In en, this message translates to:
+  /// **'Zoom Position Was Too Far, Please Zoom In To Get Specific Location'**
+  String get zoomTooFar;
+
+  /// No description provided for @confirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirmation'**
+  String get confirmation;
+
+  /// action success
+  ///
+  /// In en, this message translates to:
+  /// **'{name} Update Successfully'**
+  String updateSuccessfully(Object type, Object name);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

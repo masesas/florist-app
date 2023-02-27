@@ -59,6 +59,10 @@ class $AssetsIconGen {
   /// File path: assets/icon/ic_id.png
   AssetGenImage get icId => const AssetGenImage('assets/icon/ic_id.png');
 
+  /// File path: assets/icon/ic_maps_point.png
+  AssetGenImage get icMapsPoint =>
+      const AssetGenImage('assets/icon/ic_maps_point.png');
+
   /// File path: assets/icon/ic_no_photo.png
   AssetGenImage get icNoPhoto =>
       const AssetGenImage('assets/icon/ic_no_photo.png');
@@ -86,6 +90,7 @@ class $AssetsIconGen {
   List<AssetGenImage> get values => [
         icAddPhoto,
         icId,
+        icMapsPoint,
         icNoPhoto,
         icPhotoUser,
         icUk,

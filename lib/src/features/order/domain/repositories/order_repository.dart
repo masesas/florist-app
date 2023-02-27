@@ -24,4 +24,6 @@ abstract class OrderRepository {
 
   /// rejecting NewOrder
   Future<void> rejectOrder();
+
+  Future<List<OrderStatusEntity>> getStatusOrderList();
 }

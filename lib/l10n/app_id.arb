@@ -61,5 +61,26 @@
   "sender": "Pengirim",
   "deliveryOrder": "Pengiriman Order (DO)",
   "productImage": "Foto Produk",
-  "uploadImage": "Masukkan Gambar"
+  "uploadImage": "Masukkan Gambar",
+  "ignoreLocationPermission": "Ijinkan aplikasi untuk mengakses lokasi untuk fitur ini",
+  "ignoreLocationAndGps": "Ijinkan Aplikasi Untuk Mengakses Lokasi dan Nyalanan GPS di Pengaturan Handphone",
+  "close": "Tutup",
+  "locationDetails": "Lokasi Detail",
+  "selectAddress": "Pilih Alamat",
+  "orderIn": "OrderMasuk",
+  "rejected": "Di Tolak",
+  "missed": "Terlewat",
+  "dataAnalysis": "Data & Analisis",
+  "zoomTooFar": "Posisi Zoom Terlalu Jauh, Dekatkan Zoom Untuk Mendapatkan Lokasi Yg Spesifik",
+  "confirmation": "Konfirmasi",
+  "updateSuccessfully": "{name} Update Berhasil",
+  "@updateSuccessfully": {
+      "description": "action success",
+      "placeholders": {
+        "type": {
+          "name": "String",
+          "example": "Alamat"
+        }
+      }
+  }
 }

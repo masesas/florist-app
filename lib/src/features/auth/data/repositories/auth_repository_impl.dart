@@ -10,12 +10,24 @@ class AuthRepositoryImpl extends AuthRepository {
   });
 
   @override
-  Future<LoginEntity> login(LoginRequest loginRequest) async {
-    await Future.delayed(const Duration(seconds: 3));
-    /*final result = await authService.login(loginRequest);
-    authLocal.setUserToken(result.token);
-    //authLocal.setUser()
-    return result;*/
-    return const LoginEntity(token: '', message: "Successfully");
+  Future<LoginEntity> login({
+    required String username,
+    required String password,
+  }) async {
+    final result = await authService.login(LoginRequest(
+      username: username,
+      password: password,
+    ));
+
+    if (result.error != null && result.error.toString() == "1") {
+      throw CustomException(msg: result.message ?? '');
+    }
+
+    await authLocal.setUserLogin(
+      token: result.token!,
+      expiresIn: result.expiresIn,
+    );
+
+    return result;
   }
 }

@@ -4,18 +4,27 @@ import 'package:florist_app/src/app/widget/button/button.dart';
 import 'package:florist_app/src/app/widget/dialog/dialog.dart';
 import 'package:florist_app/src/app/widget/text_field/text_field.dart';
 import 'package:florist_app/src/core/extensions/context_ext.dart';
-import 'package:florist_app/src/features/account/domain/language_domain.dart';
+import 'package:florist_app/src/features/account/module/account_module.dart';
+import 'package:florist_app/src/features/account/presentation/blocs/account/account_bloc.dart';
+import 'package:florist_app/src/features/account/presentation/blocs/change_address/change_address_bloc.dart';
+import 'package:florist_app/src/features/account/presentation/blocs/change_password/change_password_cubit.dart';
+import 'package:florist_app/src/features/account/presentation/blocs/florist_information/florist_information_bloc.dart';
+import 'package:florist_app/src/features/account/presentation/page/forms/change_address.dart';
 import 'package:florist_app/src/features/account/presentation/page/forms/change_password.dart';
 import 'package:florist_app/src/features/account/presentation/page/forms/florist_information.dart';
-import 'package:florist_app/src/features/account/routes/account_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart'
     hide ModularWatchExtension;
+import 'package:material_dialogs/material_dialogs.dart';
 
+import '../../../../app/app_module.dart';
 import '../../../../app/themes/themes.dart';
-import '../../../../core/di/injection_container.dart';
-import '../cubit/language/language_cubit.dart';
+import '../../../shared/domain/google_maps_domain.dart';
+import '../../../shared/domain/user_domain.dart';
+import '../../../shared/presentation/blocs/request_permission/request_permission_bloc.dart';
+import '../../domain/domain.dart';
+import '../blocs/language/language_cubit.dart';
 
 part 'account_page.dart';
 part 'change_address_page.dart';

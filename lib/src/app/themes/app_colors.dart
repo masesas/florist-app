@@ -34,6 +34,13 @@ class AppColors {
   static Color btnColor2nd = Colors.red.shade800;
   static Color btnDisabled = colorUnHighlightText;
   static const colorBox = Color(0xFFFFFFFF);
+  static const colorBorderInput = Color(0xFFD4D4D4);
+  static const colorLabelText = Color(0xFF919191);
+  static const colorTextOption = Color(0xFF0BB500);
+  static const colorBoldText = Color(0xFF4E5253);
+  static const colorBackgroundInput = Color(0xFFFFFFFF);
+  static const colorLoginBackground = Color(0xFFF5F5F5);
+  static const colorTextHintPromo = Color(0xFF878787);
 
   ///App custom color
   static const bgApp = Color(0xffE37C30);

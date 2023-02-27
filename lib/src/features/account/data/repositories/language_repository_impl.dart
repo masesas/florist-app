@@ -1,4 +1,4 @@
-part of '../language_data.dart';
+part of 'repositories.dart';
 
 class LanguageRepositoryImpl extends LanguageRepository {
   final SharePrefUtils sharePref;

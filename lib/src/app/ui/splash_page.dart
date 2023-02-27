@@ -2,12 +2,14 @@ import 'dart:async';
 
 import 'package:florist_app/gen/assets.gen.dart';
 import 'package:florist_app/src/app/themes/themes.dart';
+import 'package:florist_app/src/core/constants/hero_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../core/di/injection_container.dart';
 import '../../core/utils/shared_pref_utils.dart';
-import '../routes/routes.dart';
+import '../../features/auth/auth.dart';
+import '../app_module.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -17,6 +19,7 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
+  @override
   @override
   void initState() {
     super.initState();
@@ -29,13 +32,13 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   void _checkLogin() async {
-    String? user = await getIt<SharePrefUtils>().getUser();
-    Modular.to.navigate(Routes.HOME);
-    /*if (user != null) {
+    String? user = await getIt<SharePrefUtils>().getUserToken();
+    //Modular.to.navigate(Routes.HOME);
+    if (user != null) {
       Modular.to.navigate(Routes.HOME);
     } else {
       Modular.to.navigate(AuthRoutes.AUTH_LOGIN);
-    }*/
+    }
   }
 
   @override
@@ -56,8 +59,11 @@ class _SplashPageState extends State<SplashPage> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Center(
-                      child: Assets.icon.logoTitleappBlack
-                          .image(fit: BoxFit.fitWidth),
+                      child: Hero(
+                        tag: HeroConstants.SPLASH_HERO,
+                        child: Assets.icon.logoTitleappBlack
+                            .image(fit: BoxFit.fitWidth),
+                      ),
                     ),
                     /* if (message.isNotEmpty)
                       Text(message, style: AppStyles.fontBold11),

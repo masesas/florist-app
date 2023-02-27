@@ -8,31 +8,30 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  late AppLocalizations _localizations;
-  final _form = FormGroup({
-    ...CustomFormControl.userId,
-    ...CustomFormControl.password,
-  });
+  bool _isShowPw = true;
 
   @override
   void initState() {
     super.initState();
   }
 
-  bool _isShowPw = false;
-
   @override
   Widget build(BuildContext context) {
-    _localizations = AppLocalizations.of(context);
-
     return BlocProvider(
       create: (context) => getIt<AuthCubit>(),
       child: BlocListener<AuthCubit, AuthState>(
         listener: (context, state) {
-          if (state.isSuccess) {
-            SnackBarUtils(context).showSnackBar(state.responseMessage ?? "");
+          if (state.isLoading) {
+            context.showFullLoading();
+          } else {
+            context.hideFullLoading();
+          }
 
+          if (state.isSuccess) {
             Modular.to.navigate(Routes.HOME);
+          } else if (state.isFailLogin &&
+              (state.responseMessage ?? '').isNotEmpty) {
+            context.dialogInfo(message: state.responseMessage ?? "");
           }
         },
         child: SafeArea(
@@ -51,10 +50,13 @@ class _LoginPageState extends State<LoginPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    Assets.icon.logoTitleappBlack.image(
-                      scale: 1.5,
+                    Hero(
+                      tag: HeroConstants.SPLASH_HERO,
+                      child: Assets.icon.logoTitleappBlack.image(
+                        scale: 1.5,
+                      ),
                     ),
-                    const SizedBox(height: 40),
+                    const SizedBox(height: AppSize.spaceBig),
                     Text(
                       AppLocalizations.of(context).login,
                       textAlign: TextAlign.center,
@@ -62,23 +64,25 @@ class _LoginPageState extends State<LoginPage> {
                         fontSize: 30,
                       ),
                     ),
-                    const SizedBox(height: 20),
-                    ReactiveForm(
-                      formGroup: _form,
-                      child: Column(
+                    const SizedBox(height: AppSize.spaceDefault),
+                    LoginWidgetFormBuilder(initState: (_, formModel) {
+                      formModel.usernameControl?.value = 'FAIT';
+                      formModel.passwordControl?.value = 'xxxxxx';
+                    }, builder: (context, formModel, child) {
+                      return Column(
+                        mainAxisSize: MainAxisSize.min,
                         children: [
-                          /* ReactiveInputText(
-                            title: AppLocalizations.of(context).userId,
-                            formName: FormName.userId,
-                            hint: "Entry Your User ID",
-                          ),
-                          const SizedBox(height: 20),
                           ReactiveInputText(
-                            title: AppLocalizations.of(context).password,
-                            formName: FormName.password,
+                            hint: "Entry Your User ID",
+                            title: context.lang.userId,
+                            formControl: formModel.usernameControl,
+                          ),
+                          ReactiveInputText(
+                            marginTop: AppSize.spaceSmall,
+                            formControl: formModel.passwordControl,
+                            title: context.lang.password,
                             hint: "Entry Your Password",
                             hideText: _isShowPw,
-                            borderAll: true,
                             suffixIcon: IconButton(
                               icon: Icon(
                                 _isShowPw
@@ -91,28 +95,30 @@ class _LoginPageState extends State<LoginPage> {
                                 });
                               },
                             ),
-                          ),*/
+                          ),
+                          const SizedBox(height: 50),
+                          BlocBuilder<AuthCubit, AuthState>(
+                            buildWhen: (prev, curr) {
+                              return prev.isLoading != curr.isLoading;
+                            },
+                            builder: (context, state) {
+                              return ButtonPrimary(
+                                width: double.maxFinite,
+                                title: context.lang.login,
+                                onClick: () {
+                                  if (formModel.form.valid) {
+                                    FocusScope.of(context).unfocus();
+                                    context.read<AuthCubit>().login(
+                                        formModel.usernameControl!.value!,
+                                        formModel.passwordControl!.value!);
+                                  }
+                                },
+                              );
+                            },
+                          )
                         ],
-                      ),
-                    ),
-                    const SizedBox(height: 50),
-                    BlocBuilder<AuthCubit, AuthState>(
-                      buildWhen: (prev, curr) {
-                        return prev.isLoading != curr.isLoading;
-                      },
-                      builder: (context, state) {
-                        return ButtonPrimary(
-                          title: AppLocalizations.of(context).login,
-                          isLoading: state.isLoading,
-                          onClick: () {
-                            _form.markAllAsTouched();
-                            if (_form.valid) {
-                              context.read<AuthCubit>().login(_userId, _pw);
-                            }
-                          },
-                        );
-                      },
-                    )
+                      );
+                    }),
                   ],
                 ),
               ),
@@ -122,8 +128,4 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-
-  String get _userId => _form.control(FormName.userId).value.toString();
-
-  String get _pw => _form.control(FormName.password).value.toString();
 }

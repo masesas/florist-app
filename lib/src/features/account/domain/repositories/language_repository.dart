@@ -1,4 +1,4 @@
-part of '../language_domain.dart';
+part of '../domain.dart';
 
 abstract class LanguageRepository {
   /// get language default en (English)

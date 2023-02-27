@@ -1,4 +1,4 @@
-part of '../language_data.dart';
+part of 'models.dart';
 
 class LanguageModel extends LanguageEntity {
   const LanguageModel({

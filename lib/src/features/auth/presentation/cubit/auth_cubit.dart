@@ -1,11 +1,6 @@
-import 'dart:ui';
-
 import 'package:equatable/equatable.dart';
-import 'package:florist_app/gen/app_localizations.dart';
-import 'package:florist_app/src/features/auth/data/models/models.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../core/constants/app_constants.dart';
 import '../../../../core/utils/utils.dart' show SharePrefUtils;
 import '../../domain/domain.dart';
 
@@ -20,16 +15,14 @@ class AuthCubit extends Cubit<AuthState> {
     required this.sharePrefUtils,
   }) : super(const AuthState.initial());
 
-  void login(String userId, String pw) async {
-    final langId = await sharePrefUtils.getLanguage() ?? AppConstants.EN;
-    final loadLocale = await AppLocalizations.delegate.load(Locale(langId));
-
+  void login(String username, String pw) async {
     emit(state.copyWith(
       isLoading: true,
       isSuccess: false,
     ));
-    final result = await loginUseCase.invoke(LoginRequest(
-      userId: userId,
+
+    final result = await loginUseCase.invoke(LoginParams(
+      username: username,
       password: pw,
     ));
 
@@ -37,13 +30,13 @@ class AuthCubit extends Cubit<AuthState> {
       emit(state.copyWith(
         isSuccess: false,
         isLoading: false,
-        //responseMessage: loadLocale.actionFail,
+        isFailLogin: true,
+        responseMessage: error.msg.toString(),
       ));
     }, (data) {
       emit(state.copyWith(
         isSuccess: true,
         isLoading: false,
-        //responseMessage: loadLocale.actionSuccess,
       ));
     });
   }

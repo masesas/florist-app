@@ -5,7 +5,6 @@ import 'package:flutter_modular/flutter_modular.dart';
 import '../../features/account/account.dart';
 import '../../features/home/home.dart';
 import '../../features/order/order.dart';
-import '../../features/order/routes/order_routes.dart';
 import '../themes/themes.dart';
 
 class MainPage extends StatefulWidget {
@@ -20,11 +19,6 @@ class _MainPageState extends State<MainPage> {
   String _title = "";
 
   final _pageController = PageController();
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   void didChangeDependencies() {
@@ -42,6 +36,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.colorBackground,
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
         centerTitle: true,
         title: Text(_title),
@@ -73,7 +68,7 @@ class _MainPageState extends State<MainPage> {
       ),
       child: InkWell(
         onTap: () {
-          Modular.to.pushNamed(OrderRoutes.ORDER_SEARCH);
+          Modular.to.pushNamed(OrderModule.ORDER_SEARCH);
         },
         child: Stack(
           children: const [
@@ -102,24 +97,6 @@ class _MainPageState extends State<MainPage> {
     );
   }
 
-  Widget _buildPageView() {
-    return PageView(
-      controller: _pageController,
-      physics: const NeverScrollableScrollPhysics(),
-      onPageChanged: (index) {
-        setState(() {
-          _selectedIndex = index;
-          _title = _navList()[index].label!;
-        });
-      },
-      children: const [
-        HomePage(),
-        OrderPage(),
-        AccountPage(),
-      ],
-    );
-  }
-
   Widget _buildBottomNavigationBar() {
     return BottomNavigationBar(
       elevation: 20,
@@ -142,12 +119,6 @@ class _MainPageState extends State<MainPage> {
       _title = _navList()[index].label!;
       _selectedIndex = index;
     });
-    //_pageController.jumpToPage(index);
-    /*_pageController.animateToPage(
-      index,
-      duration: const Duration(milliseconds: 500),
-      curve: Curves.ease,
-    );*/
   }
 
   List<BottomNavigationBarItem> _navList() {
@@ -176,11 +147,12 @@ class _MainPageState extends State<MainPage> {
     IconData icon,
   ) {
     return BottomNavigationBarItem(
-        label: title,
-        icon: Icon(
-          icon,
-          color:
-              _selectedIndex == index ? AppColors.buttonColorDark : Colors.grey,
-        ));
+      label: title,
+      icon: Icon(
+        icon,
+        color:
+            _selectedIndex == index ? AppColors.buttonColorDark : Colors.grey,
+      ),
+    );
   }
 }

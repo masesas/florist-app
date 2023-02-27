@@ -24,12 +24,12 @@ dependencies:
   pretty_dio_logger: ^1.2.0-beta-1 #logger for dio http request
 
   #local storage
-  drift: ^2.4.2
-  sqlite3_flutter_libs: ^0.5.0
-  path_provider: ^2.0.0
+  drift: ^2.5.0
+  sqlite3_flutter_libs: ^0.5.13
+  path_provider: ^2.0.13
   path: ^1.8.3 #local storage support
   #temporary local storage support
-  shared_preferences: ^2.0.17
+  shared_preferences: ^2.0.18
 
   #widget
   cached_network_image: ^3.2.3 #images support
@@ -42,10 +42,11 @@ dependencies:
   table_calendar: ^3.0.9 #calendar
   modal_bottom_sheet: ^3.0.0-pre
   reactive_forms_annotations: #anotation for generate reactive form widget
-
+  community_charts_flutter: ^1.0.1 #chart widget
 
   #location support
   geolocator: ^9.0.2
+  geocoding: ^2.0.5
 
   #permission handler
   permission_handler: ^10.2.0
@@ -61,6 +62,10 @@ dependencies:
 
   #localization, formatting and many more support
   intl: ^0.18.0 # dont upgrade this, will not match with reactive form
+  device_info_plus: ^8.1.0 #utils support
+  package_info_plus: ^3.0.3 #utils support
+  devicelocale: ^0.5.5 #utils support
+  connectivity_plus: ^3.0.3 #utils support
 
   #usecase support
   either_dart: ^0.3.0
@@ -98,6 +103,10 @@ dev_dependencies:
 
   #reactive form generator
   reactive_forms_generator: ^0.23.4
+
+  #testing utils
+  mockito:
+  bloc_test: ^9.1.1
 
 flutter:
 
@@ -147,6 +156,10 @@ flutter_gen:
         package_parameter_enabled: false
         # Assets.images.chip (default style)
         style: dot-delimiter
+
+linter:
+  rules:
+    - prefer_single_quotes
 
 #flutter_intl:
 #  enabled: true

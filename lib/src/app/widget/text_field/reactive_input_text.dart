@@ -11,12 +11,14 @@ class ReactiveInputText extends StatelessWidget {
   final TextInputAction textInputAction;
   final TextInputType textInputType;
   final bool readOnly;
+  final bool disabled;
   final bool showArrow;
   final Function(FormControl<dynamic>)? onTap;
   final bool borderAll;
   final Widget? suffixIcon;
   final double? marginTop;
   final bool showCursor;
+  final int maxLines;
 
   const ReactiveInputText({
     required this.title,
@@ -32,10 +34,12 @@ class ReactiveInputText extends StatelessWidget {
     this.showArrow = false,
     this.borderAll = false,
     this.readOnly = false,
+    this.disabled = false,
     this.textInputAction = TextInputAction.next,
     this.suffixIcon,
     this.marginTop,
     this.showCursor = true,
+    this.maxLines = 1,
   }) : super(key: key);
 
   @override
@@ -81,10 +85,11 @@ class ReactiveInputText extends StatelessWidget {
                   : textInputType,
               obscureText: hideText,
               minLines: 1,
+              maxLines: maxLines,
               decoration: inputDecoration(
                 hint,
                 borderAll: borderAll,
-                colorFilled: readOnly ? AppColors.disabledTextField : null,
+                colorFilled: disabled ? AppColors.disabledTextField : null,
               ).copyWith(
                 prefixIcon: icon,
                 suffixIcon: showArrow

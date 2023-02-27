@@ -189,4 +189,42 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get uploadImage => 'Upload Image';
+
+  @override
+  String get ignoreLocationPermission => 'You need to grant location permission to use this feature';
+
+  @override
+  String get ignoreLocationAndGps => 'Please Grant Location Permission and Turn On Your GPS Services In Phone Setting';
+
+  @override
+  String get close => 'Close';
+
+  @override
+  String get locationDetails => 'Location Details';
+
+  @override
+  String get selectAddress => 'Select Address';
+
+  @override
+  String get orderIn => 'Order In';
+
+  @override
+  String get rejected => 'Rejected';
+
+  @override
+  String get missed => 'Missed';
+
+  @override
+  String get dataAnalysis => 'Data & Analysis';
+
+  @override
+  String get zoomTooFar => 'Zoom Position Was Too Far, Please Zoom In To Get Specific Location';
+
+  @override
+  String get confirmation => 'Confirmation';
+
+  @override
+  String updateSuccessfully(Object type, Object name) {
+    return '$name Update Successfully';
+  }
 }

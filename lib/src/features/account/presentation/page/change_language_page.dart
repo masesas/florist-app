@@ -6,7 +6,7 @@ class ChangeLanguagePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider.value(
-      value: getIt<LanguageCubit>(),
+      value: Modular.get<LanguageCubit>(),
       child: Scaffold(
           backgroundColor: AppColors.colorBackground,
           appBar: AppBarForm(

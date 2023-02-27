@@ -1,0 +1,225 @@
+{
+  "predictions": [
+    {
+      "description": "Bogor, West Java, Indonesia",
+      "matched_substrings": [
+        {
+          "length": 5,
+          "offset": 0
+        }
+      ],
+      "place_id": "ChIJN4R5EuPDaS4RkLn-FG1XAQM",
+      "reference": "ChIJN4R5EuPDaS4RkLn-FG1XAQM",
+      "structured_formatting": {
+        "main_text": "Bogor",
+        "main_text_matched_substrings": [
+          {
+            "length": 5,
+            "offset": 0
+          }
+        ],
+        "secondary_text": "West Java, Indonesia"
+      },
+      "terms": [
+        {
+          "offset": 0,
+          "value": "Bogor"
+        },
+        {
+          "offset": 7,
+          "value": "West Java"
+        },
+        {
+          "offset": 18,
+          "value": "Indonesia"
+        }
+      ],
+      "types": [
+        "administrative_area_level_2",
+        "political",
+        "geocode"
+      ]
+    },
+    {
+      "description": "Bogor, Kampung Parung Jambu, Bogor City, West Java, Indonesia",
+      "matched_substrings": [
+        {
+          "length": 5,
+          "offset": 0
+        }
+      ],
+      "place_id": "ChIJtarWDErEaS4RoLn-FG1XAQM",
+      "reference": "ChIJtarWDErEaS4RoLn-FG1XAQM",
+      "structured_formatting": {
+        "main_text": "Bogor",
+        "main_text_matched_substrings": [
+          {
+            "length": 5,
+            "offset": 0
+          }
+        ],
+        "secondary_text": "Kampung Parung Jambu, Bogor City, West Java, Indonesia"
+      },
+      "terms": [
+        {
+          "offset": 0,
+          "value": "Bogor"
+        },
+        {
+          "offset": 7,
+          "value": "Kampung Parung Jambu"
+        },
+        {
+          "offset": 29,
+          "value": "Bogor City"
+        },
+        {
+          "offset": 41,
+          "value": "West Java"
+        },
+        {
+          "offset": 52,
+          "value": "Indonesia"
+        }
+      ],
+      "types": [
+        "locality",
+        "political",
+        "geocode"
+      ]
+    },
+    {
+      "description": "Bogor Barat, Bogor City, West Java, Indonesia",
+      "matched_substrings": [
+        {
+          "length": 5,
+          "offset": 0
+        }
+      ],
+      "place_id": "ChIJAyeXOPfEaS4RDo4rw59zBCw",
+      "reference": "ChIJAyeXOPfEaS4RDo4rw59zBCw",
+      "structured_formatting": {
+        "main_text": "Bogor Barat",
+        "main_text_matched_substrings": [
+          {
+            "length": 5,
+            "offset": 0
+          }
+        ],
+        "secondary_text": "Bogor City, West Java, Indonesia"
+      },
+      "terms": [
+        {
+          "offset": 0,
+          "value": "Bogor Barat"
+        },
+        {
+          "offset": 13,
+          "value": "Bogor City"
+        },
+        {
+          "offset": 25,
+          "value": "West Java"
+        },
+        {
+          "offset": 36,
+          "value": "Indonesia"
+        }
+      ],
+      "types": [
+        "administrative_area_level_3",
+        "political",
+        "geocode"
+      ]
+    },
+    {
+      "description": "Bogor Selatan, Bogor City, West Java, Indonesia",
+      "matched_substrings": [
+        {
+          "length": 5,
+          "offset": 0
+        }
+      ],
+      "place_id": "ChIJd0J8xU7PaS4R2T1b9vSVbxY",
+      "reference": "ChIJd0J8xU7PaS4R2T1b9vSVbxY",
+      "structured_formatting": {
+        "main_text": "Bogor Selatan",
+        "main_text_matched_substrings": [
+          {
+            "length": 5,
+            "offset": 0
+          }
+        ],
+        "secondary_text": "Bogor City, West Java, Indonesia"
+      },
+      "terms": [
+        {
+          "offset": 0,
+          "value": "Bogor Selatan"
+        },
+        {
+          "offset": 15,
+          "value": "Bogor City"
+        },
+        {
+          "offset": 27,
+          "value": "West Java"
+        },
+        {
+          "offset": 38,
+          "value": "Indonesia"
+        }
+      ],
+      "types": [
+        "administrative_area_level_3",
+        "political",
+        "geocode"
+      ]
+    },
+    {
+      "description": "Bogor Utara, Bogor City, West Java, Indonesia",
+      "matched_substrings": [
+        {
+          "length": 5,
+          "offset": 0
+        }
+      ],
+      "place_id": "ChIJbaDs753GaS4RiR7nzH1iOT8",
+      "reference": "ChIJbaDs753GaS4RiR7nzH1iOT8",
+      "structured_formatting": {
+        "main_text": "Bogor Utara",
+        "main_text_matched_substrings": [
+          {
+            "length": 5,
+            "offset": 0
+          }
+        ],
+        "secondary_text": "Bogor City, West Java, Indonesia"
+      },
+      "terms": [
+        {
+          "offset": 0,
+          "value": "Bogor Utara"
+        },
+        {
+          "offset": 13,
+          "value": "Bogor City"
+        },
+        {
+          "offset": 25,
+          "value": "West Java"
+        },
+        {
+          "offset": 36,
+          "value": "Indonesia"
+        }
+      ],
+      "types": [
+        "administrative_area_level_3",
+        "political",
+        "geocode"
+      ]
+    }
+  ],
+  "status": "OK"
+}

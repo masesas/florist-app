@@ -61,5 +61,26 @@
   "sender": "Sender",
   "deliveryOrder": "Delivery Order (DO)",
   "productImage": "Product Image",
-  "uploadImage": "Upload Image"
+  "uploadImage": "Upload Image",
+  "ignoreLocationPermission": "You need to grant location permission to use this feature",
+  "ignoreLocationAndGps": "Please Grant Location Permission and Turn On Your GPS Services In Phone Setting",
+  "close": "Close",
+  "locationDetails": "Location Details",
+  "selectAddress": "Select Address",
+  "orderIn": "Order In",
+  "rejected": "Rejected",
+  "missed": "Missed",
+  "dataAnalysis": "Data & Analysis",
+  "zoomTooFar": "Zoom Position Was Too Far, Please Zoom In To Get Specific Location",
+  "confirmation": "Confirmation",
+  "updateSuccessfully": "{name} Update Successfully",
+  "@updateSuccessfully": {
+      "description": "action success",
+      "placeholders": {
+        "type": {
+          "name": "String",
+          "example": "Address"
+        }
+      }
+  }
 }

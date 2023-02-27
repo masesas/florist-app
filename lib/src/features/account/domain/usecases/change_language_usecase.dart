@@ -1,4 +1,4 @@
-part of '../language_domain.dart';
+part of '../domain.dart';
 
 class ChangeLanguageUseCase extends UseCase<LanguageEntity, bool> {
   final LanguageRepository languageRepository;
