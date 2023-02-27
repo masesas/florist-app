@@ -1,0 +1,225 @@
+{
+  "project_info": {
+    "project_number": "499196347544",
+    "project_id": "pusher-beams-c9e63",
+    "storage_bucket": "pusher-beams-c9e63.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499196347544:android:bf5fec208542c96ce03ced",
+        "android_client_info": {
+          "package_name": "com.flower.advisor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "499196347544-2l85vldo50vas00e3jtm9v9adqit318j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flower.advisor",
+            "certificate_hash": "00afd8564047c7ef645aa32e16ac636baac3b5ba"
+          }
+        },
+        {
+          "client_id": "499196347544-2psjjs5nf9873bqff2qfsnj7od74ql69.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flower.advisor",
+            "certificate_hash": "c86fba0be5f84c5ed38d50e3c66c37033e4f4e6e"
+          }
+        },
+        {
+          "client_id": "499196347544-avkberstq258chsmflul52bej3kdvodb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flower.advisor",
+            "certificate_hash": "e20ef46d04be6b37c28151b6b016f2c931cc1499"
+          }
+        },
+        {
+          "client_id": "499196347544-d4fp8avb7q37j424vdalf6thlh3o2bsu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flower.advisor",
+            "certificate_hash": "c00e580aa2e5dd219a2b9766150a61f79aef987e"
+          }
+        },
+        {
+          "client_id": "499196347544-ee0hq5o3q5jf7o7vpva4lbcg0fo4g03s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flower.advisor",
+            "certificate_hash": "08bb67cde0ac185a0348d9977cfeb0135e08ee4d"
+          }
+        },
+        {
+          "client_id": "499196347544-ep4v8gaturuvlnmcvtus4ktesiniei2v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flower.advisor",
+            "certificate_hash": "69c9aabb4189d3d11d1eac03c301647062e052c1"
+          }
+        },
+        {
+          "client_id": "499196347544-f63is1k1nr6cb3a42pcs2spek527lbr1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flower.advisor",
+            "certificate_hash": "575227a13272ba138eb0bf68b164a2d07a335bac"
+          }
+        },
+        {
+          "client_id": "499196347544-m4m67cqcs153e7it58bj4h55ljcq4q5g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flower.advisor",
+            "certificate_hash": "a6d084597c31316016ab7c6d61daa5e961ab8175"
+          }
+        },
+        {
+          "client_id": "499196347544-pn74ir5ktto2o3299sr4qlrq44mc96kl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flower.advisor",
+            "certificate_hash": "870612187b2ada99b9d907d9be83041bd07c185d"
+          }
+        },
+        {
+          "client_id": "499196347544-5anbte4i676eogp76n5kjn483fcfsfiu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDx2Mrosej9GIJx7WnFYc-f_o9OMeupSm0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "499196347544-5anbte4i676eogp76n5kjn483fcfsfiu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "499196347544-86uu0nl8cqkkr732vbeiri0mjs0rg410.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flower.advisor",
+                "app_store_id": "1185232807"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499196347544:android:2ad6bf40409212f8e03ced",
+        "android_client_info": {
+          "package_name": "com.flower.advisor.florist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "499196347544-5anbte4i676eogp76n5kjn483fcfsfiu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDx2Mrosej9GIJx7WnFYc-f_o9OMeupSm0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "499196347544-5anbte4i676eogp76n5kjn483fcfsfiu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "499196347544-86uu0nl8cqkkr732vbeiri0mjs0rg410.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flower.advisor",
+                "app_store_id": "1185232807"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:499196347544:android:13951d71916683fee03ced",
+        "android_client_info": {
+          "package_name": "com.floweradvisor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "499196347544-0cdcavk5did01q35bfec0ogv3avkc4l6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.floweradvisor",
+            "certificate_hash": "e20ef46d04be6b37c28151b6b016f2c931cc1499"
+          }
+        },
+        {
+          "client_id": "499196347544-3v5tohkg76gunj1676e9pigvd7rq8b53.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.floweradvisor",
+            "certificate_hash": "a6d084597c31316016ab7c6d61daa5e961ab8175"
+          }
+        },
+        {
+          "client_id": "499196347544-8lgtjbhd21f7p8kc6q2epqjpgjpg6ihd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.floweradvisor",
+            "certificate_hash": "c86fba0be5f84c5ed38d50e3c66c37033e4f4e6e"
+          }
+        },
+        {
+          "client_id": "499196347544-ane3ngd55m7ljcpdq31qo1c134s57ku4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.floweradvisor",
+            "certificate_hash": "870612187b2ada99b9d907d9be83041bd07c185d"
+          }
+        },
+        {
+          "client_id": "499196347544-5anbte4i676eogp76n5kjn483fcfsfiu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDx2Mrosej9GIJx7WnFYc-f_o9OMeupSm0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "499196347544-5anbte4i676eogp76n5kjn483fcfsfiu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "499196347544-86uu0nl8cqkkr732vbeiri0mjs0rg410.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flower.advisor",
+                "app_store_id": "1185232807"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
